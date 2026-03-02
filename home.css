@@ -1,0 +1,1133 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+/*로딩*/
+
+#loading_screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #6799FC; /* 윈도우 배경색 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 모든 것보다 위에 */
+    font-family: Galmuri9;
+}
+
+.loading_box {
+    width: 300px;
+    background: #c0c0c0;
+    border: 2px solid #fff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.loading_title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.progress_bar {
+    width: 100%;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #808080;
+    position: relative;
+    margin: 10px 0;
+}
+
+.progress_fill {
+    width: 0%;
+    height: 100%;
+    background: #0000ff; /* 진한 파란색 로딩 바 */
+    transition: width 0.2s;
+}
+
+.loading_status {
+    font-size: 12px;
+    color: #444;
+    font-family: Galmuri9;
+}
+
+/*기본 바탕*/
+
+.up{
+    width: 100%;
+    height: 960px;
+    background-color: #6799FC;
+}
+
+.icon{
+    width: 320px;
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-top: 77px;
+    position: absolute;
+}
+
+.name{
+    font-family: Galmuri9;
+    font-weight: 400;
+    color: black;
+    font-size: 15px;
+}
+
+.icon_box{
+    width: 120px;
+    height: 145px;
+    text-align: center;
+}
+
+.l_icon{
+    width: 120px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.r_icon{
+    width: 120px;
+    height: 515px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon_img{
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+}
+
+.my_com{
+    background: url(img/index/내\ 컴퓨터.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.trash{
+    background: url(img/index/휴지통.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.internet{
+    background: url(img/index/인터넷.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.folder{
+    background: url(img/index/잠금\ 폴더.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.disk{
+    background: url(img/index/플로피\ 디스크.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.img{
+    background: url(img/index/이미지.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.TXT{
+    background: url(img/index/문서.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*잠긴 폴더 암호 입력*/
+
+#login-box{
+    display: none;
+}
+
+.interface{
+    background-color: white;
+    box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.35);
+    display: none;
+    position: absolute;
+    z-index: 1000;
+}
+
+.login{
+    width: 820px;
+    height: 497px;
+    margin-top: 291px;
+    margin-left: 550px;
+    display: inline-block;
+}
+
+.inter_heder{
+    width: 100%;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.35);
+    cursor: grab;
+}
+
+.inter_heder:active {
+    cursor: grabbing;   /* 잡았을 때 모양 */
+}
+
+.inter_heder p{
+    font-family: Galmuri11;
+    font-weight: 700;
+    font-size: 25px;
+    color: #ffffff;
+    pointer-events: none;
+    user-select: none;
+}
+
+.he_login{
+    height: 50px;
+    background-color: #00C0FF;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.inter_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_login{
+    width: 792px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 9px;
+}
+
+.inter_btn_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_login{
+    width: 124px;
+    height: 32px;
+}
+
+.log_btn{
+    width: 32px;
+    height: 32px;
+}
+
+.mini{
+    background: url(img/index/최소화.png);
+    background-size: cover;
+}
+
+.mini:hover{
+    background: url(img/index/최소화\ 호버.png);
+    background-size: cover;
+}
+
+.max{
+    background: url(img/index/최대화.png);
+    background-size: cover;
+}
+
+.max:hover{
+    background: url(img/index/최대화\ 호버.png);
+    background-size: cover;
+}
+
+.closer{
+    background: url(img/index/닫기.png);
+    background-size: cover;
+}
+
+.closer:hover{
+    background: url(img/index/닫기\ 호버.png);
+    background-size: cover;
+}
+
+.log_work{
+    border: solid 8px #E6D8E6;
+    width: 100%;
+    height: 442px;
+    margin-top: 4px;
+}
+
+.log_work h2{
+    font-family: Galmuri11;
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    margin-top: 54px;
+}
+
+.input_box{
+    width: 413px;
+    height: 136px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+label{
+    width: 100%;
+    height: 60px;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.55);
+}
+
+input{
+    width: 100%;
+    height: 100%;
+    font-family: Galmuri7;
+    font-size: 24px;
+    border: solid 3px #BEBEBE;
+    outline: none;
+    padding-left: 17px;
+}
+
+.btn_box{
+    width: 388px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 43px;
+}
+
+.ok, .cancer{
+    width: 183px;
+    height: 45px;
+    display: block;
+    background-color: #ffffff;
+    border: solid 3px #BEBEBE;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.55);
+    font-size: 24px;
+    color: black;
+    font-family: GalmuriMono9;
+}
+
+.ok:hover, .cancer:hover{
+    background-color: #BEBEBE;
+    color: #ffffff;
+    border: solid 3px #ffffff;
+}
+
+/*메인폴더(목차)*/
+
+.folder_list_box{
+    width: 768px;
+    height: 559px;
+    position: absolute;
+    top: 202px;
+    left: 576px;
+}
+
+.he_list{
+    height: 73px;
+    background-color: #FCD15F;
+}
+
+.he_list p{
+    font-size: 36px;
+}
+
+.box_list{
+    width: 718px;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 25px;
+}
+
+.btn_list{
+    width: 178px;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_btn{
+    width: 46px;
+    height: 46px;
+}
+
+.list_work{
+    width: 100%;
+    height: 484px;
+    border: solid 8px #E6D8E6;
+    margin-top: 2px;
+    position: absolute;
+}
+
+.main_list{
+    width: 668px;
+    height: 405px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 36px;
+}
+
+.list_up{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_down{
+    width: 302px;
+    height: 187px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.fol_box p{
+    font-size: 20px;
+    font-family: Galmuri9;
+    font-weight: 400;
+    text-align: center;
+    color: black;
+}
+
+.fol_list{
+    width: 124px;
+    height: 124px;
+    background: url(img/index/폴더.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*프로필 파일*/
+
+.folder_box{
+    width: 696px;
+    height: 279px;
+    position: absolute;
+    top: 187px;
+    right: 52px;
+}
+
+.proflie{
+    top: 205px;
+    right: 180px;
+}
+
+.he_sublist{
+    width: 100%;
+    height: 44px;
+    background-color: #FCD15F;
+    position: absolute;
+}
+
+.box_sublist{
+    width: 665px;
+    height: 28px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.btn_sublist{
+    width: 107px;
+    height: 27px;
+}
+
+.sublist_btn{
+    width: 27px;
+    height: 27px;
+}
+
+.sublist_work{
+    width: 100%;
+    height: 232px;
+    border: solid 8px #E6D8E6;
+    margin-top: 48px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sublist_work::-webkit-scrollbar{
+    width: 24px;
+}
+
+.sublist_work::-webkit-scrollbar-thumb{
+    background-color: #C8CADF;
+    border: solid #737782 2px;
+}
+
+.sublist_work::-webkit-scrollbar-track{
+    background-color: #FCD15F;
+}
+
+.sublist_work::-webkit-scrollbar-button:vertical:start:decrement{
+    background-image: url(img/index/Polygon\ 1-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    display: block;
+    background-color: #C8CADF;
+    border: solid #737782 2px;
+}
+
+.sublist_work::-webkit-scrollbar-button:vertical:end:increment{
+    background-image: url(img/index/Polygon\ 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    display: block;
+    background-color: #C8CADF;
+    border: solid #737782 2px;
+}
+
+.main_sublist{
+    width: 595px;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-top: 18px;
+}
+
+.sub_pro{
+    width: 435px;
+    margin-top: 10px;
+}
+
+.file_box{
+    width: 124px;
+    height: 180px;
+}
+
+.file_box p{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-family: Galmuri9;
+    font-weight: 400;
+}
+
+.file_icon{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.file_img{
+    background: url(img/index/이미지.png);
+    background-size: cover;
+}
+
+.file_text{
+    background: url(img/index/문서.png);
+    background-size: cover;
+}
+
+/*프로필 사진*/
+
+.img_file{
+    width: 1093px;
+    height: 822px;
+    position: absolute;
+    top: 71px;
+    left: 61px;
+}
+
+.pro_pic{
+    width: 400px;
+    height: 557px;
+    top: 335px;
+    left: 171px;
+}
+
+.he_img{
+    background-color: #F041FF;
+    width: 100%;
+    height: 68px;
+}
+
+.pro_pic .he_img{
+    height: 57px;
+}
+
+.box_img{
+    width: 1051px;
+    height: 43px;
+    margin-top: 12px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.box_img p{
+    font-size: 32px;
+}
+
+.pro_pic .box_img{
+    width: 363px;
+    height: 36px;
+}
+
+.pro_pic .box_img p{
+    font-size: 24px;
+}
+
+.btn_img{
+    width: 166px;
+    height: 43px;
+}
+
+.pro_pic .btn_img{
+    width: 139px;
+    height: 36px;
+}
+
+.img_btn{
+    width: 43px;
+    height: 43px;
+}
+
+.pro_pic .img_btn{
+    width: 36px;
+    height: 36px;
+}
+
+.img_main{
+    width: 100%;
+    border: solid 8px #E6D8E6;
+    height: 750px;
+    margin-top: 4px;
+}
+
+.pro_main{
+    height: 497px;
+    margin-top: 4px;
+}
+
+.in_img{
+    width: 1057px;
+    height: 709px;
+    background-size: cover;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.profile_img{
+    width: 365px;
+    height: 461px;
+    background: url(img/profile/my.jpg);
+    background-size: cover;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/*프로필 소개 텍스트*/
+
+.text_file{
+    position: absolute;
+    width: 686px;
+    height: 411px;
+    right: 52px;
+    top: 482px;
+}
+
+.pro_text{
+    width: 691px;
+    height: 557px;
+    top: 80px;
+    left: 492px;
+}
+
+.he_text{
+    background-color: #7989F0;
+    height: 57px;
+    width: 100%;
+}
+
+.box_text{
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 36px;
+    position: absolute;
+    width: 652px;
+}
+
+.btn_text{
+    width: 139px;
+    height: 36px;
+}
+
+.text_btn{
+    width: 36px;
+    height: 36px;
+}
+
+.pro_text .box_text{
+    width: 654px;
+}
+
+.text_work{
+    border: solid 8px #E6D8E6;
+    width: 100%;
+    height: 351px;
+    font-family: Galmuri9;
+    font-size: 24px;
+    margin-top: 4px;
+}
+
+.t_1{
+    height: 496px;
+    margin-top: 4px;
+}
+
+.profile_text{
+    margin-top: 20px;
+    margin-left: 28px;
+}
+
+/*스킬*/
+
+.skill_pic{
+    width: 618px;
+    height: 376px;
+    top: 507px;
+    left: 1022px;
+}
+
+.skill_pic .he_img{
+    height: 57px;
+}
+
+.skill_pic .box_img{
+    width: 577px;
+    height: 36px;
+}
+
+.skill_pic .box_img p{
+    font-size: 24px;
+}
+
+.skill_pic .btn_img{
+    width: 139px;
+    height: 36px;
+}
+
+.skill_pic .img_btn{
+    width: 36px;
+    height: 36px;
+}
+
+.skill_work{
+    height: 316px;
+    margin-top: 4px;
+}
+
+.skill_box{
+    background-color: #F9D950;
+    width: 578px;
+    height: 279px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.skill_up, .skill_down{
+    width: 539px;
+    height: 97px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-left: 19px;
+}
+
+.skill_up{
+    margin-top: 24px;
+}
+
+.skill_down{
+    margin-top: 158px;
+}
+
+.skill_icon{
+    width: 97px;
+    height: 97px;
+}
+
+.Ps{
+    background: url(img/profile/아이콘/photoshop_5968520.png);
+    background-size: cover;
+}
+
+.Ai{
+    background: url(img/profile/아이콘/illustrator_5968472.png);
+    background-size: cover;
+}
+
+.Id{
+    background: url(img/profile/아이콘/indesign_5968482.png);
+    background-size: cover;
+}
+
+.FG{
+    background: url(img/profile/아이콘/unnamed.png);
+    background-size: cover;
+    border-radius: 16px;
+}
+
+.Ae{
+    background: url(img/profile/아이콘/after-effects_5968428.png);
+    background-size: cover;
+}
+
+.Pr{
+    background: url(img/profile/아이콘/premiere-pro_5968525.png);
+    background-size: cover;
+}
+
+.html{
+    background: url(img/profile/아이콘/html.png);
+    background-size: cover;
+    border-radius: 16px;
+}
+
+.css{
+    background: url(img/profile/아이콘/css.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+}
+
+/*티타임 이미지*/
+
+.teatime{
+    width: 537px;
+    left: 586px;
+}
+
+.teatime .box_img{
+    width: 496px;
+}
+
+.teatime_img{
+    width: 502px;
+    height: 709px;
+    background: url(작품/일러_티타임.png);
+    margin-left: 9px;
+    margin-top: 10px;
+}
+
+/*디올 이미지*/
+
+.diol_img{
+    background: url(작품/디지털.png);
+    background-size: cover;
+    width: 502px;
+    height: 709px;
+}
+
+/*티타임 텍스트*/
+
+.body_text{
+    margin-top: 15px;
+    margin-left: 18px;
+}
+
+/*티타임 이미지*/
+
+.Trip_img{
+    background: url(작품/트립닷컴-목업.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/*페스파인더 이미지*/
+
+.Path_img{
+    background: url(작품/패스파인더.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*편디 폴더*/
+
+.last{
+    width: 279px;
+    margin-bottom: 18px;
+}
+
+.file_epub{
+    background: url(img/index/플로피\ 디스크.png);
+    background-size: cover;
+}
+
+/*포스터*/
+
+.Poster_img{
+    background: url(작품/포스터\ 디자인_목업.jpg);
+    background-size: cover;
+}
+
+/*리플릿*/
+
+.Leaflet_img{
+    background: url(작품/리플릿\ 디자인.jpg);
+    background-size: cover;
+}
+
+/*책표지*/
+
+.Bookcover_img{
+    background: url(작품/책표지\ 디자인.jpg);
+    background-size: cover;
+}
+
+/*전자책*/
+
+.he_epub{
+    height: 68px;
+    background-color: #41FF57;
+}
+
+.Epub_img{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background: #2c3e50; 
+    margin-left: 10px;
+    gap: 30px; 
+}
+
+/* 책 컨테이너 */
+.book-container {
+    width: 400px; height: 550px; 
+    position: relative; perspective: 2000px;
+}
+
+.book { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
+
+/* 종이 설정 */
+.paper {
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* 앞/뒷면 디자인 */
+.front, .back {
+    position: absolute; 
+    width: 100%; 
+    height: 100%;
+    backface-visibility: hidden;
+    background-size: cover; 
+    background-position: center;
+    border-radius: 0 10px 10px 0;
+    box-shadow: inset -5px 0 10px rgba(0,0,0,0.1), 3px 3px 10px rgba(0,0,0,0.2);
+    background-color: white; 
+}
+
+.back { transform: rotateY(180deg); 
+    border-radius: 10px 0 0 10px; 
+}
+
+.paper.flipped { transform: rotateY(-180deg); }
+
+/* 컨트롤 버튼 */
+.controls { 
+    display: flex; 
+    gap: 20px; 
+}
+
+button {
+    padding: 12px 24px; 
+    cursor: pointer; 
+    border: none;
+    border-radius: 5px; 
+    background: #DADADA; 
+    font-family: Galmuri9;
+    color: 414141;
+}
+
+button:disabled { 
+    background: #95a5a6; 
+    cursor: not-allowed; 
+}
+
+.Magazine_img{
+    background: url(작품/잡지디자인.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*AI 파일*/
+
+.ai_sub{
+    width: 279px;
+}
+
+/*ai 이미지*/
+
+.concept{
+    height: 725px;
+    top: 168px;
+}
+
+.concept .img_main{
+    height: 653px;
+}
+
+.con_img{
+    width: 1057px;
+    height: 616px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.concept_img{
+    width: 542px;
+    background: url(작품/이어폰.jpg);
+    background-size: cover;
+}
+
+.concept_img2{
+    width: 494px;
+    background: url(작품/이어폰2.jpg);
+    background-size: cover;
+}
+
+/*영상*/
+
+.mp4{
+    top: 133px;
+}
+
+.file_mp4{
+    background-image: url(img/index/비디오.png);
+    background-size: cover;
+}
+
+.mp4_file{
+    width: 1093px;
+    height: 714px;
+    top: 125px;
+    left: 54px;
+    position: absolute;
+}
+
+.he_mp4{
+    height: 68px;
+    background-color: #AA4FFF;
+}
+
+.mp4_main{
+    width: 100%;
+    height: 643px;
+    border: 8px solid #E6D8E6;
+    margin-top: 4px;
+}
+
+.in_mp4{
+    width: 1057px;
+    height: 599px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.fill-video {
+    width: 100%;
+    height: 100%;
+
+    /* 이미지의 background-size: cover와 동일한 역할 */
+    object-fit: contain; 
+
+    /* 만약 영상의 중심을 맞추고 싶다면 */
+    object-position: center center;
+}
+
+.bit_t, .fly_t, .domino_t, .iphone_t, .adidas_t{
+    top: 432px;
+}
+
+/*하단*/
+
+.down{
+    width: 100%;
+    height: 120px;
+    background-color: #E8E7ED;
+    border-top: 10px solid #09254E;
+}
+
+.under_box{
+    width: 380px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    width: 120px;
+    height: 100%;
+}
+
+.under_img{
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.start{
+    background: url(img/index/시작.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.internet2{
+    background: url(img/index/인터넷.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.folder2{
+    background: url(img/index/폴더.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.line{
+    width: 10px;
+    height: 100%;
+    background-color: #09254E;
+}
